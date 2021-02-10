@@ -18,12 +18,30 @@ const promptUser = () => {
             {
                 type: 'input',
                 name: 'name',
-                message: 'What is your name?'
+                message: 'What is your name?',
+                validate: nameInput => {
+                    if (nameInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter your name!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
                 name: 'github',
-                message: 'Enter your Github Username'
+                message: 'Enter your Github Username',
+                validate: githubInput => {
+                    if (githubInput) {
+                        return true;
+                    }
+                    else {
+                        console.log('Please enter your Github username!');
+                        return false;
+                    }
+                }
             },
             {
                 type: 'input',
@@ -48,12 +66,30 @@ const promptProject = portfolioData => {
         {
             type: 'input',
             name: 'name',
-            message: 'What is the name of your project?'
+            message: 'What is the name of your project?',
+            validate: projectNameInput => {
+                if (projectNameInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter the name of your project!');
+                    return false;
+                }
+            }
         },
         {
             type: 'input',
             name: 'description',
-            message: 'Provide a description of the project (Required)'
+            message: 'Provide a description of the project (Required):',
+            validate: projectDescriptionInput => {
+                if (projectDescriptionInput) {
+                    return true;
+                }
+                else {
+                    console.log('Please enter the description of your project!');
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',
